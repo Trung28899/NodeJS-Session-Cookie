@@ -48,7 +48,9 @@ II. Core Concepts:
 
 III. Module Notes: 
     1. Setting and Getting basic Cookies: 
-        - Code in 
+        - Code in 2nd Commit
+        - See controllers/auth.js for how to set and get basic 
+            Cookie
     
 IV. Other Notes: 
     What's in this module ?
