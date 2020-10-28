@@ -1,29 +1,28 @@
 exports.getLogin = (req, res, next) => {
   /*
-    Getting the cookie value
+    Getting session variable
   */
-  const isLoggedIn = req.get("Cookie").split("=")[1] === "true";
-  console.log(isLoggedIn);
+  console.log(req.session.isLoggedIn);
   res.render("auth/login", {
     path: "/login",
     pageTitle: "Login",
-    isAuthenticated: isLoggedIn,
+    isAuthenticated: false,
   });
 };
 
 exports.postLogin = (req, res, next) => {
   /*
-    Setting up the cookie
-    1st argument: mandatory for cookie setting
-    2nd argument: any value you want to set
+    Using the session middleware
+    setting session variable named isLoggedIn to true
 
-    Once the cookie is set, you'll need to close the browser 
-    or change the cookie manually or set another header to change it 
-    for the cookie to change
+    Now this isLoggedIn is stored in server and will be 
+    shared across requests. So different requests of the 
+    same user will have this variable set to true
 
-    if you simple close the tab and send another request to 
-    localhost:3000/login, loggedIn cookie is still true
+    Howevers, different user won't have isLoggedIn to true 
+    because it is the core idea of session, sharing the information
+    across requests not, across users
   */
-  res.setHeader("Set-Cookie", "loggedIn=true");
+  req.session.isLoggedIn = true;
   res.redirect("/");
 };

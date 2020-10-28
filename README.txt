@@ -9,6 +9,7 @@ I. Tools Used:
     - $ npm install --save sequelize
     - $ npm install --save mongodb
     - $ npm install --save mongoose
+    - $ npm install --save express-session
 
     - https://www.mysql.com/
         MySQL Community Server
@@ -45,12 +46,39 @@ II. Core Concepts:
         - Cookie now only contains an id as an identifier so that
             website can access and store all your preferences in their system
         - Websites can access and write to your Cookie if allowed 
+        - Cookie is not related to website, it is a global file that 
+            can be access by any web application
+
+    2. What is Session: 
+        - Session: 
+            +, is a data structure that contain user data, 
+            +, is stored in the server-side
+            +, share information across requests of the same user
+            +, doesn't share information across user
+        - With Session, Cookie must contain user id as an identifier
+        - See Session and Cookie relationship in this image: 
+        https://drive.google.com/file/d/1buX-IXZh5G_TGs5HTqWCrAFxDltWIFqq/view?usp=sharing        
 
 III. Module Notes: 
     1. Setting and Getting basic Cookies: 
-        - Code in 2nd Commit
+        - Code in 3rd Commit
+        - See note what is a cookie above
         - See controllers/auth.js for how to set and get basic 
             Cookie
+    
+    2. Setting Cookie Configs: 
+        - Code in 4th Commit
+        - See controllers/auth.js for how to set Cookie Configs
+        - Note that often time we won't set cookie manually like this, 
+            this is just a demonstration for understanding 
+            the basic
+    
+    3. Setting and Using Basic Session: 
+        - Code in 5th Commit
+        - See note for what is session above
+        - How to set up session see in app.js
+        - How to set and use cookie variable in ./controllers/auth.js
+
     
 IV. Other Notes: 
     What's in this module ?
