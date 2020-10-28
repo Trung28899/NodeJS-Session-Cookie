@@ -10,6 +10,7 @@ I. Tools Used:
     - $ npm install --save mongodb
     - $ npm install --save mongoose
     - $ npm install --save express-session
+    - $ npm install --save connect-mongodb-session
 
     - https://www.mysql.com/
         MySQL Community Server
@@ -67,19 +68,25 @@ III. Module Notes:
             Cookie
     
     2. Setting Cookie Configs: 
-        - Code in 4th Commit
+        - Forgot to commit this code, see video 236 (not really important)
         - See controllers/auth.js for how to set Cookie Configs
         - Note that often time we won't set cookie manually like this, 
             this is just a demonstration for understanding 
             the basic
     
     3. Setting and Using Basic Session: 
-        - Code in 5th Commit
+        - Code in 4th Commit
         - See note for what is session above
         - How to set up session see in app.js
         - How to set and use cookie variable in ./controllers/auth.js
 
-    
+    4. Using MongoDB to store session: 
+        - Code in 5th Commit
+        - See app.js for how to set up configurations 
+            +, see store constant and middleware to set up session
+        - Now we hit login in the /login route, we'll have a record in 
+            mongodb under shop, under session collection 
+            
 IV. Other Notes: 
     What's in this module ?
         - What is Cookies ? 
