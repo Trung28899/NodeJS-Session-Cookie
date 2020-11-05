@@ -86,6 +86,35 @@ III. Module Notes:
             +, see store constant and middleware to set up session
         - Now we hit login in the /login route, we'll have a record in 
             mongodb under shop, under session collection 
+    
+    5. Asssignment 5:
+        - Code in 6th Commit
+        - Task: Authenticate user when user go to Login > hit button Login, 
+            not at the beginning of the applicaiton. When user hit Login, 
+            create a session that store the user. Operate information 
+            from that user session instead of req.user
+        - See ./controllers/auth.js: under postLogin() to see how to create
+            user session and authenticate user. 
+            
+            +, After we click Login, 
+            go to dev tools > Application > Cookies we'll see connect.id
+            Cookie, which will be connected to the req.session.user. 
+
+            +, If we delete the cookie from this application, won't be
+            able to render 'Cart' and 'Order' option, 'Add To Cart'
+            won't work also
+
+        - See ./controllers/shop.js: under getCart(), postCart(), postCartDeleteProduct(): 
+            +, In order to work with user object retrieved from the database, 
+            we will have to use: 
+            const sessionObject = User.hydrate(req.session.user);
+            to create a new mongoose object 
+
+            +, After all operations finished, we'll have to save that object
+            back to user session: 
+            req.session.user = sessionObject; 
+
+
             
 IV. Other Notes: 
     What's in this module ?
