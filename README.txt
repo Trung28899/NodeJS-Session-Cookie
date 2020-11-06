@@ -121,6 +121,11 @@ III. Module Notes:
         - This operation delete the session in the database. The Cookie
         in the browser still remain but reference to nothing so it'll 
         contain no information
+    
+    8. Saving session before redirect: 
+        - Code in 8th Commit
+        - See ./controllers/auth.js: under postLogin(), see
+            req.session.save() 
 
 
             
