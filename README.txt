@@ -114,6 +114,14 @@ III. Module Notes:
             back to user session: 
             req.session.user = sessionObject; 
 
+    6. Deleting Session and Cookie: 
+        - Code in 7th Commit
+        - See in ./controllers/auth.js: under postLogout() to see how to 
+        destroy session
+        - This operation delete the session in the database. The Cookie
+        in the browser still remain but reference to nothing so it'll 
+        contain no information
+
 
             
 IV. Other Notes: 
